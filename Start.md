@@ -134,3 +134,39 @@ class Index{
 > $data:需要加解密的文本
 > $key:私钥
 > $t:模式。0加密，1解密
+# 数据库类
+> 未实例化，实例化需要数据库账号，密码，地址，数据库名，端口号
+## 实例化数据库类
+> new DB($db_host, $db_user, $db_pass, $db_name, $db_port)  
+> 参数详解：  
+> $db_host:数据库地址
+> $db_user:数据库账号  
+> $db_pass:数据库密码  
+> $db_name:数据库名  
+> $db_port:数据库端口号
+##数据库类方法
+## query($sql)  
+> 执行sql语句  
+## fetch($sqlquery)  
+> 取结果集  
+> 参数详解：  
+> $sqlquery:query($sql)执行后返回的类  
+## count($sql)  
+> 取结果集数量  
+## get_row($sql)  
+> 取结果集  
+## insert($sql)  
+> 执行插入语句  
+> 参数详解：  
+> $sql:只允许放入insert语句，取插入id  
+## error()  
+> 取错误信息  
+## escape()  
+> 转义特殊字符  
+## mysqli_affected_rows()   
+> 使用query()后，再执行此方法，获取受影响的行数。一个 > 0 的整数表示所影响的记录行数。0 表示没有受影响的记录。-1 表示查询返回错误。  
+## insert_array($table,$array)
+> 执行插入语句,表字段较多可以用这个简洁  
+> 参数详解：  
+> $table:表名  
+> $array:插入键值对，格式：['键'=>'','键1'=>'值2'...]。键名必须与字段名一样
