@@ -1,4 +1,27 @@
 # 开始食用
+# 伪静态
+## apache
+```
+Options -MultiViews
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^ index.php [QSA,L]
+```
+## nginx
+```
+rewrite ^ /index.php last;
+```
+## caddy2
+```
+@key0 {
+ not file 
+ path_regexp key0 ^ 
+}
+rewrite @key0 /index.php
+```
 # 定义路由
 > 将此框架项目打开后，可以看到根目录有app.php  
 > 已经有一个示例在里边，他写的是：  
