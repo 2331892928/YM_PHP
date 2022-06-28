@@ -25,11 +25,17 @@ rewrite @key0 /index.php
 # 定义路由
 > 将此框架项目打开后，可以看到根目录有app.php  
 > 已经有一个示例在里边，他写的是：  
-> App::use('',__routes__.'/index/index.php');  
+```php
+App::use('',__routes__.'/index/index.php'); 
+```
+>  
 > 观察他  
 > 第一部分，命令部分：App::use();  
 > 第二部分：第一个参数：路由的名称，如果你填写'/'或''，那么就是 http://host/ 或 http://host 就可以执行第二个参数，否则不执行，跳出404  
-> 第二个参数，路由文件目录，请在根目录下的routes创建路由文件，然后使用__routes__变量：__routes__.'你路由文件名称.php';
+> 第二个参数，路由文件目录，请在根目录下的routes创建路由文件，然后使用[__routes__]变量：
+```php
+__routes__.'你路由文件名称.php';
+```
 # 路由文件规则
 > 框架内已有示例：index.php的路由文件  
 > 不可定义：stylesheets;javascripts;images,这三个路由为静态文件路由,通过系统变量引入，请查看全局变量
