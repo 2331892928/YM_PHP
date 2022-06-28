@@ -32,6 +32,7 @@ rewrite @key0 /index.php
 > 第二个参数，路由文件目录，请在根目录下的routes创建路由文件，然后使用__routes__变量：__routes__.'你路由文件名称.php';
 # 路由文件规则
 > 框架内已有示例：index.php的路由文件  
+> 不可定义：stylesheets;javascripts;images,这三个路由为静态文件路由,通过系统变量引入，请查看全局变量
 
 > 路由文件模板为：
 ```php
@@ -54,6 +55,9 @@ class Index{
 > query_get('key') 
 ## 获取post与get参数  
 > request('key') 
+## 获取query参数
+> /dd/ww这种
+> query()
 ## 当前请求是否是get  
 > is_get() 
 ## 输出报错信息
@@ -88,6 +92,7 @@ class Index{
 > purge($string,$trim = true,$filter = true,$force = 0, $strip = FALSE)  
 > $string:需要净化的字符串  
 # YM_Class类
+> 先 new YM_Class()
 ## 发送邮件 
 > $YM_Class->send_mail($host, $port, $user, $pass, $to, $content = NULL, $title = 'YM框架邮件系统', $type = 'TXT', $debug = false)  
 > 参数详解：    
@@ -134,6 +139,12 @@ class Index{
 > $data:需要加解密的文本
 > $key:私钥
 > $t:模式。0加密，1解密
+## 随机字符串
+> $YM_Class->getRandom($number)
+> 参数详解：  
+> $number:长度
+## 获取毫秒时间戳
+> $YM_Class->getMillisecond()
 # 数据库类
 > 未实例化，实例化需要数据库账号，密码，地址，数据库名，端口号
 ## 实例化数据库类
