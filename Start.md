@@ -165,13 +165,22 @@ class Index{
 ## query($sql)  
 > 执行sql语句  
 ## fetch($sqlquery)  
-> 取结果集  
+> 取结果集(1个)  
 > 参数详解：  
 > $sqlquery:query($sql)执行后返回的类  
 ## count($sql)  
 > 取结果集数量  
 ## get_row($sql)  
-> 取结果集  
+> 取结果集（1个）  
+## mysqli_fetch_assoc($sqlquery)
+> 取结果集（1个），需要循环
+```php
+while($row= mysqli_fetch_assoc($sqlquery)){
+    //每一次循环就是一个结果集(一条)
+}
+```	
+> 参数详解：  
+> $sqlquery:query($sql)执行后返回的类
 ## insert($sql)  
 > 执行插入语句  
 > 参数详解：  
