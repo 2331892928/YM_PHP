@@ -152,7 +152,7 @@ class Index{
 ## 获取毫秒时间戳
 > $YM_Class->getMillisecond()
 # 数据库类
-> 未实例化，实例化需要数据库账号，密码，地址，数据库名，端口号
+> 未实例化，实例化需要数据库账号，密码，地址，数据库名，端口号  
 ## 实例化数据库类
 > new DB($db_host, $db_user, $db_pass, $db_name, $db_port)  
 > 参数详解：  
