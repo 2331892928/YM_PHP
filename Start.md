@@ -38,7 +38,7 @@ __routes__.'你路由文件名称.php';
 ```
 # 路由文件规则
 > 框架内已有示例：index.php的路由文件  
-> 不可定义：stylesheets;javascripts;images,这三个路由为静态文件路由,通过系统变量引入，请查看全局变量
+> 不可定义：stylesheets;javascripts;images;fonts;data,这几个路由为静态文件路由,通过系统变量引入，请查看全局变量
 
 > 路由文件模板为：
 ```php
