@@ -56,25 +56,25 @@ class Index{
 > 至此你已经会了80%
 # YM_request类
 ## 获取post参数  
-> body_post('key') 
+> post('key') 
 ## 获取get参数  
-> query_get('key') 
+> get('key') 
 ## 获取post与get参数  
 > request('key') 
-## 获取query参数
-> /dd/ww这种
+## 获取params参数
+> /dd/ww这种,可获取dd ww 或/dd/index.html 可获取dd index.html  
 > query()
-## 当前请求是否是get  
-> is_get() 
+## 当前请求是否是get
+> whetherGet() 
+## 当前请求类型
+> requestType()  
 ## 输出报错信息
->直接输出报错信息
-
+>直接输出报错信息  
 > error($ocde,$msg)  
 > $code:返回状态码  
 > $msg:返回报错内容  
 ## 获取body参数
 > 全部  
-
 > body() 
 ## 获取请求头  
 > header() 
