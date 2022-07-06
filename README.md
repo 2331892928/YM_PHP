@@ -65,6 +65,8 @@ App:use('/admin','路由路径'，false);
 > - 对模板文件进行文件类型判断，对静态文件的类型算法进行优化
 > - 增加YM_request中方法requestType，返回当前用户请求类型：put,get,post等
 > - 增加静态文件类型目录：fonts data,data中可以放txt或音频文件等
+> - 增加对composer的支持
+> - 修复部分linux搭建后目录指向错误
 > - 对DEBUG方法：error 进行了优化，可直接定位哪一个方法，哪一个类，哪一个函数，哪一个文件，第几行出的错(可开关debug:/bin/config/Config.php)
 > - 更改 YM_request 类中方法名，更人性化
 > - body_post->post
