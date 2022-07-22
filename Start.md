@@ -133,13 +133,13 @@ class Index{
 > $data:需要加解密的文本
 > $pwd:密码
 > $t:模式。0加密，1解密
-## RSA公钥加解密
+## RSA公钥加解密(分段,超过密钥长度分段加解密)
 > $YM_Class->RSA_GMI($data, $key, $t = 0)
 > 参数详解：  
 > $data:需要加解密的文本
 > $key:公钥
 > $t:模式。0加密，1解密
-## RSA私钥加解密
+## RSA私钥加解密(分段,超过密钥长度分段加解密)
 > $YM_Class->RSA_SMI($data, $key, $t = 0)
 > 参数详解：  
 > $data:需要加解密的文本
@@ -154,9 +154,12 @@ class Index{
 # 数据库类
 > 未实例化，实例化需要数据库账号，密码，地址，数据库名，端口号  
 ## 实例化数据库类
+> 需要连接sqlite,自定义常量为：SQLITE，并设定为true，布尔,同时sqlite数据库后缀名保持为空(不要后缀名db 安全)  
+> new DB("db数据库路径")  
+> mysql数据库，自动判断新旧类型
 > new DB($db_host, $db_user, $db_pass, $db_name, $db_port)  
 > 参数详解：  
-> $db_host:数据库地址
+> $db_host:数据库地址  
 > $db_user:数据库账号  
 > $db_pass:数据库密码  
 > $db_name:数据库名  
@@ -168,12 +171,24 @@ class Index{
 > 取结果集(1个)  
 > 参数详解：  
 > $sqlquery:query($sql)执行后返回的类  
+## fetch_all($sqlquery)
+> 取结果集(所有 7.0以上)  
+> 参数详解：  
+> $sqlquery:query($sql)执行后返回的类  
+## get_row_all($sql)
+> 取结果集(所有 7.0以上)  
+> 参数详解：  
+> $sql:sql语句  
+## multi_query($sql)
+> 执行多行sql语句，布尔返回  
+> 参数详解：  
+> $sql:sql语句  
 ## count($sql)  
 > 取结果集数量  
 ## get_row($sql)  
 > 取结果集（1个）  
 ## mysqli_fetch_assoc($sqlquery)
-> 取结果集（1个），需要循环
+> 取结果集（1个），需要循环，循环就是所有结果集,推荐使用get_row_all或fetch_all
 ```php
 while($row= mysqli_fetch_assoc($sqlquery)){
     //每一次循环就是一个结果集(一条)
@@ -189,7 +204,7 @@ while($row= mysqli_fetch_assoc($sqlquery)){
 > 取错误信息  
 ## escape()  
 > 转义特殊字符  
-## mysqli_affected_rows()   
+## affected()   
 > 使用query()后，再执行此方法，获取受影响的行数。一个 > 0 的整数表示所影响的记录行数。0 表示没有受影响的记录。-1 表示查询返回错误。  
 ## insert_array($table,$array)
 > 执行插入语句,表字段较多可以用这个简洁  

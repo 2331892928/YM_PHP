@@ -73,3 +73,8 @@ App:use('/admin','路由路径'，false);
 > - query_get->get
 > - query->params
 > - is_get->whetherGet
+
+> 0.5 | 2022年7月22日:
+> - 解决当有端口号运行时，导致静态文件指向错误
+> - 优化数据库类，新增：multi_query,update_array,insert_array,get_row_all。优化sqlite数据库连接方式
+> - rsa加密解密优化，解决密钥长度问题，自动获取密钥长度
