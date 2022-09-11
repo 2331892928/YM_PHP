@@ -112,7 +112,7 @@ class Index{
 # YM_Class类
 > 先 new YM_Class()
 ## 发送邮件 
-> $YM_Class->send_mail($host, $port, $user, $pass, $to, $content = NULL, $title = 'YM框架邮件系统', $type = 'TXT', $debug = false)  
+> $YM_Class->send_mail($host, $port, $user, $pass, $to, $content = NULL, $Secure=NULL, $title = 'YM框架邮件系统', $type = 'TXT', $debug = false)  
 > 参数详解：    
 > $host:邮件服务器  
 > $port:邮件端口  
@@ -120,6 +120,7 @@ class Index{
 > $pass:邮件密码  
 > $to:发送给谁  
 > $content:发送的内容，可以html  
+> $Secure:指定协议  
 > $title:邮件标题  
 > $type:发送类型  
 > $debug:debug  

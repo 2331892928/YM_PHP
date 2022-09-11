@@ -86,3 +86,4 @@ App:use('/admin','路由路径'，false);
 > - 增加获取IP自定义请查看文档使用方法 YM_request->ipV2(int $type,string $zdy=NULL)  
 > - 增加自定义错误页面YM_request->statusPage(int $response_code,string $path,array $options=[])  
 > - 增加获取当前日志YM_request->getLog()  
+> - 修改YM_Class类的send_mail方法，增加参数：$Secure,如指定后，则指定此协议进行连接邮箱，否则根据端口自动判断。发送失败不再是直接输出页面，而是返回错误信息，1成功狗则返回错误信息
