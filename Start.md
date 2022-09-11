@@ -102,12 +102,12 @@ class Index{
 ## 获取ip  
 > ipV2(int $type = 0,string $ipServer=NULL)  
 > $type:默认0HTTP_CLIENT_IP，1HTTP_X_FORWARDED_FOR，2REMOTE_ADDR，3REMOTE_ADDR，4自定义，需要在参数二给出  
-> $ipServer:自定义获取ip头比如：HTTP_CLIENT_IP
+> $ipServer:自定义获取ip头比如：HTTP_CLIENT_IP  
 ## 返回自定义状态页面。比如404页面等等
-> statusPage(int $response_code,string $path,array $options=[])  
-> $response_code:状态码
-> $path:页面路径
-> $options:页面参数传递，老样子{{表示变量}}
+> statusPage(int $response_code,string $path,array $options=[])    
+> $response_code:状态码  
+> $path:页面路径  
+> $options:页面参数传递，老样子{{表示变量}}  
 
 # YM_Class类
 > 先 new YM_Class()
@@ -205,7 +205,7 @@ class Index{
 while($row= mysqli_fetch_assoc($sqlquery)){
     //每一次循环就是一个结果集(一条)
 }
-```	
+``` 
 > 参数详解：  
 > $sqlquery:query($sql)执行后返回的类
 ## insert($sql)  
