@@ -56,9 +56,26 @@ class Index{
 > 至此你已经会了80%
 # YM_request类
 ## 获取post参数  
-> post('key') 
+> post('key',$isItNecessary=false,$regular=NULL,$purifiedNot=false)  
+> $isItNecessary:boolean 是否必须,不存在返回false  
+> $regular:string 正则表达式,传入后匹配，不匹配返回NULL，若匹配返回参数  
+> $purifiedNot:boolean 是否参数净化  
 ## 获取get参数  
-> get('key') 
+> get('key',$isItNecessary=false,$regular=NULL,$purifiedNot=false)  
+> $isItNecessary:boolean 是否必须,不存在返回false  
+> $regular:string 正则表达式,传入后匹配，不匹配返回NULL，若匹配返回参数  
+> $purifiedNot:boolean 是否参数净化  
+## 获取json参数
+> getAjaxParams()  
+> 返回array
+## 校验json参数  
+> ajaxParms($array,$regex)  
+> $array:传入json参数，通过getAjaxParams()获取  
+> $regex:规则array 格式为：```["key"=>["must"=>false,"regular"=>"","type"=>$request->Regex()::TYPE_NUMBER]```  
+> key规则参数：  
+> must:bool 可省 true必须false不必须  
+> regular:string 正则表达式 传入则匹配，匹配不上则该key值为NULL  
+> type:string 值类型常量，通过YM_request下的Regex常量表示TYPE_NUMBER为int，可自行查看  
 ## 获取post与get参数  
 > request('key') 
 ## 获取params参数
